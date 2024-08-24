@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px 30px;
+  color: #fff;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: all .5s ease;
+}
+
+.card::before {
+  top: -20px;
+  right: -70px;
+}
+
+.card::after {
+  right: -10px;
+  bottom: -34px;
+}
+
+.card:hover::after {
+  transform: translate(-150%);
+}
+
+.card:hover::before {
+  transform: translate(-200%);
+}
+
+.card:hover {
+  transform: scale(110%);
+}
+
+.container .card:nth-child(3n + 1) {
+  background: rgb(255, 189, 154);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 189, 154, 1) 1%,
+    rgba(255, 169, 152, 1) 35%,
+    rgba(255, 140, 151, 1) 77%,
+    rgba(250, 133, 151, 1) 100%
+  );
+}
+
+.container .card:nth-child(3n + 2) {
+  background: rgb(140, 201, 246);
+  background: linear-gradient(
+    90deg,
+    rgba(140, 201, 246, 1) 1%,
+    rgba(26, 145, 230, 1) 79%
+  );
+}
+
+.container .card:nth-child(3n + 3) {
+  background: rgb(124, 217, 209);
+  background: linear-gradient(
+    90deg,
+    rgba(124, 217, 209, 1) 1%,
+    rgba(13, 208, 188, 1) 79%
+  );
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.card-price {
+  font-size: 24px;
+  margin-bottom: 55px;
+}
+
+.card-text {
+  font-size: 15px;
+}
+
+.card-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 30px;
+  right: 30px;
+}
